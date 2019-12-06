@@ -1,16 +1,3 @@
-/*
- * Copyright (C) 2015 MediaTek Inc.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- */
-
 #ifndef _KD_CAMERA_HW_H_
 #define _KD_CAMERA_HW_H_
 
@@ -86,7 +73,12 @@ typedef enum {
 	CAMRST,
 	CAM1PDN,
 	CAM1RST,
-	CAMLDO
+	CAMLDO,
+/* Vanzo:yuntaohe on: Mon, 21 Dec 2015 21:58:45 +0800
+ */
+	CAMLDO1,
+    VCMPND
+// End of Vanzo:yuntaohe
 } CAMPowerType;
 
 extern void ISP_MCLK1_EN(BOOL En);
