@@ -61,5 +61,5 @@ typedef struct {
 	int z;
 } SENSOR_DATA;
 
-#endif    /* END OF _MC3XXX_H_ */
+#endif    /* END OF _MXC622X_H_ */
 
