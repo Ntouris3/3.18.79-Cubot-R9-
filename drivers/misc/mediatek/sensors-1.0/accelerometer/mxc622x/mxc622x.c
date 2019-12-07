@@ -13,7 +13,7 @@
  *
  */
 	 
-#include <linux/interrupt.h>
+//#include <linux/interrupt.h>
 #include <linux/i2c.h>
 #include <linux/slab.h>
 #include <linux/irq.h>
@@ -23,73 +23,12 @@
 #include <linux/input.h>
 #include <linux/workqueue.h>
 #include <linux/kobject.h>
-#include <linux/earlysuspend.h>
 #include <linux/platform_device.h>
 #include <asm/atomic.h>
 	 
-#ifdef MT6516
-#include <mach/mt6516_devs.h>
-#include <mach/mt6516_typedefs.h>
-#include <mach/mt6516_gpio.h>
-#include <mach/mt6516_pll.h>
-#endif
-
-#ifdef MT6573
-#include <mach/mt6573_devs.h>
-#include <mach/mt6573_typedefs.h>
-#include <mach/mt6573_gpio.h>
-#include <mach/mt6573_pll.h>
-#endif
-
-#ifdef MT6575
-#include <mach/mt6575_devs.h>
-#include <mach/mt6575_typedefs.h>
-#include <mach/mt6575_gpio.h>
-#include <mach/mt6575_pm_ldo.h>
-#endif
-
-#ifdef MT6577
-#include <mach/mt6577_devs.h>
-#include <mach/mt6577_typedefs.h>
-#include <mach/mt6577_gpio.h>
-#include <mach/mt6577_pm_ldo.h>
-#endif
-
-#ifdef MT6572
-#include <mach/mt_pm_ldo.h>
-#include <mach/mt_typedefs.h>
-#include <mach/mt_gpio.h>
-#include <mach/mt_boot.h>
-#endif
-/*-------------------------MT6516&MT6573 define-------------------------------*/
-#ifdef MT6516
-#define POWER_NONE_MACRO MT6516_POWER_NONE
-#endif
-
-#ifdef MT6573
-#define POWER_NONE_MACRO MT65XX_POWER_NONE
-#endif
-
-#ifdef MT6575
-#define POWER_NONE_MACRO MT65XX_POWER_NONE
-#endif
-
-#ifdef MT6577
-#define POWER_NONE_MACRO MT65XX_POWER_NONE
-#endif
-
-#ifdef MT6572
-#define POWER_NONE_MACRO MT65XX_POWER_NONE
-#endif
-	 
-	 
-	 
-#include <cust_acc.h>
-#include <linux/hwmsensor.h>
-#include <linux/hwmsen_dev.h>
-#include <linux/sensors_io.h>
+#include "accel.h"
+#include "cust_acc.h"
 #include "mxc622x.h"
-#include <linux/hwmsen_helper.h>
 	 /*----------------------------------------------------------------------------*/
 #define I2C_DRIVERID_MXC622X 150
 	 /*----------------------------------------------------------------------------*/
