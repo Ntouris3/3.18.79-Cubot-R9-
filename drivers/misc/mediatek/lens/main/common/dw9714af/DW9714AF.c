@@ -22,7 +22,7 @@
 #include <linux/uaccess.h>
 #include <linux/fs.h>
 
-#include "lens_info.h"
+#include "inc/lens_info.h"
 
 
 #define AF_DRVNAME "DW9714AF_DRV"
