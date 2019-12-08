@@ -211,7 +211,7 @@ static int setFlashDrv(int sensorDev, int strobeId)
 	int sensorDevIndex;
 	int strobeIndex;
 	int partIndex;
-	int constantFlashlightInit(void);
+
 	FLASHLIGHT_FUNCTION_STRUCT **ppF = 0;
 
 	sensorDevIndex = getSensorDevIndex(sensorDev);
