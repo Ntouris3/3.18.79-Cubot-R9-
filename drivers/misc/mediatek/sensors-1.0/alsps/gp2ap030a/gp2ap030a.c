@@ -16,26 +16,23 @@
 #include <linux/slab.h>
 #include <linux/irq.h>
 #include <linux/miscdevice.h>
-#include <asm/uaccess.h>
+#include <linux/uaccess.h>
 #include <linux/delay.h>
 #include <linux/input.h>
 #include <linux/workqueue.h>
 #include <linux/kobject.h>
-#include <linux/earlysuspend.h>
 #include <linux/platform_device.h>
-#include <asm/atomic.h>
+#include <linux/atomic.h>
 
-#include <mach/mt_typedefs.h>
-#include <mach/mt_gpio.h>
-#include <mach/mt_pm_ldo.h>
-#include <linux/hwmsensor.h>
-#include <linux/hwmsen_dev.h>
-#include <linux/sensors_io.h>
-#include <asm/io.h>
-#include <cust_eint.h>
-#include <cust_alsps.h>
+#include <linux/io.h>
 #include "gp2ap030a.h"
-#include <linux/hwmsen_helper.h>
+#include <linux/gpio.h>
+#include <linux/of_irq.h>
+
+#include <linux/wakelock.h>
+#include <linux/sched.h>
+
+#include <alsps.h>
 
 #define POWER_NONE_MACRO MT65XX_POWER_NONE
 
