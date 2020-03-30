@@ -257,19 +257,19 @@ static struct LCM_setting_table lcm_initialization_setting[] =
 	{0XFF, 3, {0X98,0X81,0X00}},
 	{0X35, 1, {0X00}},
 	{0X11, 1, {0X00}},
-	{REGFLAG_DELAY, 288, {}},
+	{REGFLAG_DELAY, 120, {}},
 	{0X29, 1, {0X00}},
-	{REGFLAG_DELAY, 32, {}},
+	{REGFLAG_DELAY, 20, {}},
 	{REGFLAG_END_OF_TABLE, 0X00, {}}
 };	
 
 static struct LCM_setting_table lcm_deep_sleep_mode_in_setting[] = 
 {
-    {0x28, 1, {0x00}},
-	{REGFLAG_DELAY, 120, {}},
-    {0x10, 1, {0x00}},
-    {REGFLAG_DELAY, 200, {}},
-    {REGFLAG_END_OF_TABLE, 0x00, {}}
+        {0x28, 1, {0x00}},
+        {REGFLAG_DELAY, 120, {}},
+        {0x10, 1, {0x00}},
+        {REGFLAG_DELAY, 200, {}},
+        {REGFLAG_END_OF_TABLE, 0x00, {}}
 };
 
 static void push_table(struct LCM_setting_table *table, unsigned int count, unsigned char force_update)
@@ -303,13 +303,13 @@ static void push_table(struct LCM_setting_table *table, unsigned int count, unsi
 
 static void lcm_set_util_funcs(const LCM_UTIL_FUNCS *util)
 {
-    memcpy(&lcm_util, util, sizeof(LCM_UTIL_FUNCS));
+        memcpy(&lcm_util, util, sizeof(LCM_UTIL_FUNCS));
 }
 
 
 static void lcm_get_params(LCM_PARAMS *params)
 {
-	memset(params, 0, sizeof(struct LCM_PARAMS));
+	memset(params, 0, sizeof(LCM_PARAMS));
 
 	params->physical_width = 62;
 	params->physical_height = 110;
@@ -370,18 +370,21 @@ static void lcm_suspend(void)
 
 static void lcm_resume(void)
 {
-    lcm_init();
+        lcm_init();
 }
 
 static void lcm_init_power(void)
 {
 }
+
 static void lcm_suspend_power(void)
 {
 }
+
 static void lcm_resume_power(void)
 {
 }
+
 static unsigned int lcm_compare_id(void)
 {
 	return 1;
@@ -401,6 +404,6 @@ LCM_DRIVER ili9881c_cpt50_haifei_hd_lcm_drv =
     .compare_id     = lcm_compare_id,
     .init_power     = lcm_init_power,   
     .suspend_power  = lcm_suspend_power,
-	.resume_power   = lcm_resume_power,
+    .resume_power   = lcm_resume_power,
 };
 
