@@ -21,6 +21,10 @@
 
 LCM_DRIVER *lcm_driver_list[] = {
 
+#if defined(ILI9881C_CPT50_HAIFEI_HD)
+	&ili9881c_cpt50_haifei_hd_lcm_drv,
+#endif
+	
 #if defined(S6D7AA0_DSI_VDO_COMMON)
 	&s6d7aa0_dsi_vdo_common_lcm_drv,
 #endif
@@ -56,9 +60,6 @@ unsigned char lcm_name_list[][128] = {
 	"r63417_fhd_dsi_cmd_truly_nt50358_qhd_drv",
 #endif
 
-#if defined(ILI9881C_CPT50_HAIFEI_HD)
-	"ili9881c_cpt50_haifei_hd_drv",
-#endif
 };
 #endif
 
