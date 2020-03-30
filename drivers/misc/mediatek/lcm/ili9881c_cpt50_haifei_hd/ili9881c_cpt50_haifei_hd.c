@@ -5,7 +5,9 @@
 * Supported device: CUBOT R9
 * Copyright 2019 © Rubén Espínola
  *---------------------------------------------------------------*/
-#include <linux/proc_fs.h>
+#ifndef BUILD_LK
+#include <linux/string.h>
+#endif
 #include "lcm_drv.h"
 
 // ---------------------------------------------------------------------------
@@ -20,14 +22,14 @@
 #define REGFLAG_DELAY             							(0XFE)
 #define REGFLAG_END_OF_TABLE      							(0xFF)
 
-#ifndef TRUE
+/*#ifndef TRUE
     #define TRUE 1
 #endif
 
 #ifndef FALSE
     #define FALSE 0
 #endif
-
+*/
 
 // ---------------------------------------------------------------------------
 //  Local Variables
